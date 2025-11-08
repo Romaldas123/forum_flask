@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Ny tråd</h2>
+<form method="POST">
+  <input name="title" placeholder="Rubrik på tråd" required><br>
+  <button type="submit">Skapa tråd</button>
+</form>
+{% endblock %}

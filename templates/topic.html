@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>{{ topic.title }}</h2>
+<p>Startad av {{ topic.username }} – {{ topic.created_at }}</p>
+<hr>
+{% for post in posts %}
+<div class="post">
+  <p>{{ post.content }}</p>
+  <small>– {{ post.username }} {{ post.created_at }}</small>
+</div>
+{% else %}
+  <p>Inga svar ännu.</p>
+{% endfor %}
+{% if session.get('user_id') %}
+<hr>
+<form method="POST" action="/reply/{{ topic.id }}">
+  <textarea name="content" placeholder="Skriv ditt svar..." required></textarea><br>
+  <button type="submit">Skicka</button>
+</form>
+{% else %}
+  <p><a href="/login">Logga in</a> för att svara.</p>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <title>Forum för fårskallar</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header>
+    <h1><a href="/">Forum för fårskallar 🐑</a></h1>
+    <nav>
+      {% if session.get('user_id') %}
+        <span>Inloggad som {{ session.username }}</span> |
+        <a href="/new_topic">Ny tråd</a> |
+        <a href="/logout">Logga ut</a>
+      {% else %}
+        <a href="/login">Logga in</a> |
+        <a href="/register">Registrera</a>
+      {% endif %}
+    </nav>
+  </header>
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+</body>
+</html>

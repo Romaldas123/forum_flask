@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Logga in</h2>
+<form method="POST">
+  <input name="username" placeholder="Användarnamn" required><br>
+  <input type="password" name="password" placeholder="Lösenord" required><br>
+  <button type="submit">Logga in</button>
+</form>
+{% endblock %}

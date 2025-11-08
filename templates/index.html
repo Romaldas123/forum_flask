@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Alla trådar</h2>
+<ul>
+{% for topic in topics %}
+  <li>
+    <a href="/topic/{{ topic.id }}">{{ topic.title }}</a>
+    <small>av {{ topic.username }} – {{ topic.created_at }}</small>
+  </li>
+{% else %}
+  <p>Inga trådar ännu. Skapa en ny!</p>
+{% endfor %}
+</ul>
+{% endblock %}

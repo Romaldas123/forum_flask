@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Registrera konto</h2>
+<form method="POST">
+  <input name="fullname" placeholder="Fullständigt namn" required><br>
+  <input name="username" placeholder="Användarnamn" required><br>
+  <input type="password" name="password" placeholder="Lösenord" required><br>
+  <button type="submit">Skapa konto</button>
+</form>
+{% endblock %}
